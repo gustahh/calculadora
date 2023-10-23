@@ -1,0 +1,414 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    background: #0b0b0b;
+    overflow: hidden;
+  }
+
+  #calculadora {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background: #f1f1f1;
+    margin: 10% auto;
+    border-radius: 15px;
+  }
+  #lblsal {
+    position: absolute;
+    width: 100px;
+    margin: 40px 30px;
+    font-family: 'Source Sans Pro', sans-serif; color: #0b0b0b;
+    font-weight: 700;
+  }
+  #sal::-webkit-inner-spin-button, #sal::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  #sal {
+    position: absolute;
+    width: 70px;
+    margin: 60px 30px;
+    background-color: #bdc3c7;
+    border-style: solid;
+    border-color: #bdc3c7;
+    border-radius: 2px;
+    outline: none;
+    padding-left: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-transition: border-color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out;
+    -webkit-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+  }
+  #sal:hover {
+    position: absolute;
+    width: 70px;
+    margin: 60px 30px;
+    background-color: #bdc3c7;
+    border-style: solid;
+    border-color: #bdc3c7;
+    border-radius: 2px;
+    outline: none;
+    padding-left: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    transform: scale(1.05);
+  }
+  #sal:focus {
+    position: absolute;
+    width: 70px;
+    margin: 60px 30px;
+    background-color: #bdc3c7;
+    border-style: solid;
+    border-color: #74b9ff;
+    border-radius: 2px;
+    outline: none;
+    padding-left: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  #minimo {
+    position: absolute;
+    margin: 100px 30px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; color: #0b0b0b;
+    background: #f1f1f1;
+  }
+  #minimo:hover {
+    position: absolute;
+    margin: 100px 30px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; color: #74b9ff;
+    background: #e6e6e6;
+  }
+  #minimo.active {
+    position: absolute;
+    margin: 100px 30px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; color: #74b9ff;
+    background: #f1f1f1;
+  }
+  #medio {
+    position: absolute;
+    margin: 100px 150px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; color: #0b0b0b;
+    background: #f1f1f1;
+  }
+  #medio:hover {
+    position: absolute;
+    margin: 100px 150px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; color: #74b9ff;
+    background: #e6e6e6;
+  }
+  #medio.active {
+    position: absolute;
+    margin: 100px 150px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; color: #74b9ff;
+    background: #f1f1f1;
+  }
+  #maximo {
+    position: absolute;
+    margin: 100px 270px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; color: #0b0b0b;
+    background: #f1f1f1;
+  }
+  #maximo:hover {
+    position: absolute;
+    margin: 100px 270px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; color: #74b9ff;
+    background: #e6e6e6;
+  }
+  #maximo.active {
+    position: absolute;
+    margin: 100px 270px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; color: #74b9ff;
+    background: #f1f1f1;
+  }
+  button {
+    position: relative;
+    display: block;
+    float: left;
+    width: 80px;
+    height: 40px;
+    border: none;
+    outline: none;
+    letter-spacing: 0;
+    padding-left: 5px;
+    font-weight: bold;
+    background: #74b9ff;
+    cursor:pointer;
+    overflow: hidden;
+    border-radius: 3px;
+    font-family: 'Source Sans Pro', sans-serif; color: #f1f1f1;
+    font-size: 18px;
+
+    -webkit-user-select: none; /* remove seleção */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -user-select: none;
+
+    transition: all 0.3s ease-in-out; /* transition */
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+button:hover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 80px;
+  height: 40px;
+  border: none;
+  outline: none;
+  letter-spacing: 0;
+  padding-left: 5px;
+  font-weight: bold;
+  background: #0984e3;
+  cursor:pointer;
+  overflow: hidden;
+  border-radius: 3px;
+  font-family: 'Source Sans Pro', sans-serif; color: #f1f1f1;
+  font-size: 18px;
+
+  -webkit-user-select: none; /* remove seleção */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -user-select: none;
+
+  transition: all 0.3s ease-in-out; /* transition */
+  -o-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+button:active {
+  position: relative;
+  display: block;
+  float: left;
+  width: 80px;
+  height: 40px;
+  border: none;
+  outline: none;
+  letter-spacing: 0;
+  padding-left: 5px;
+  font-weight: bold;
+  background: #6c5ce7;
+  transform: scale(1.1);
+  cursor:pointer;
+  overflow: hidden;
+  border-radius: 3px;
+  font-family: 'Source Sans Pro', sans-serif; color: #f1f1f1;
+  font-size: 18px;
+
+  -webkit-user-select: none; /* remove seleção */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -user-select: none;
+
+  transition: all 0.3s ease-in-out; /* transition */
+  -o-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+.ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 100%;
+    pointer-events: none;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.ripple.show {
+    -webkit-animation: ripple .45s ease-out;
+    animation: ripple .45s ease-out;
+}
+@-webkit-keyframes ripple {
+    to {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes ripple {
+    to {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+#calculo {
+    margin: 150px 30px;
+}
+#result {
+  position: absolute;
+  margin: 200px 30px;
+  font-family: 'Source Sans Pro', sans-serif; color: black;
+  font-size: 18px;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+}
+#insa {
+  position: absolute;
+  margin: 230px 30px;
+  font-family: 'Source Sans Pro', sans-serif; color: black;
+  font-size: 18px;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+}
+#limpar {
+  background: #f1f1f1;
+  position: absolute;
+  margin: 160px 150px;
+  width: 50px;
+  height: 20px;
+  transform: scale(0);
+  font-family: 'Source Sans Pro', sans-serif; color: #74b9ff;
+  font-size: 12px;
+}
+#limpar:hover {
+  background: #e6e6e6;
+  position: absolute;
+  margin: 160px 150px;
+  width: 50px;
+  height: 20px;
+  transform: scale(0);
+  font-family: 'Source Sans Pro', sans-serif; color: #74b9ff;
+  font-size: 12px;
+}
+#switchlogo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: 20px 450px;
+  cursor: pointer;
+}
+#switch {
+  position: absolute;
+  margin: 20px 320px;
+  width: 120px;
+  height: 0px;
+  overflow: hidden;
+  background: #f1f1f1;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+#switch.active {
+  position: absolute;
+  margin: 20px 320px;
+  width: 120px;
+  height: 111px;
+  overflow: hidden;
+  background: #f1f1f1;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+#horaextra {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  background: #f1f1f1;
+  font-family: 'Source Sans Pro', sans-serif; color: black; padding-left: 15px; padding-top: 5px;
+  cursor: pointer;
+}
+#horaextra:hover {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  font-family: 'Source Sans Pro', sans-serif; color: black; padding-left: 15px; padding-top: 5px;
+  cursor: pointer;
+}
+#periculosidade {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  margin: 35px 0px;
+  background: #f1f1f1;
+  font-family: 'Source Sans Pro', sans-serif; color: black; padding-left: 10px; padding-top: 10px;
+  cursor: pointer;
+}
+#periculosidade:hover {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  margin: 35px 0px;
+  background: rgba(0, 0, 0, 0.1);
+  font-family: 'Source Sans Pro', sans-serif; color: black; padding-left: 10px; padding-top: 10px;
+  cursor: pointer;
+}
+#insalubridade {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  margin: 75px 0px;
+  background: #f1f1f1;
+  font-family: 'Source Sans Pro', sans-serif; color: black; padding-left: 13px; padding-top: 10px;
+  cursor: pointer;
+}
+#insalubridade:hover {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  margin: 75px 0px;
+  background: rgba(0, 0, 0, 0.1);
+  font-family: 'Source Sans Pro', sans-serif; color: black; padding-left: 13px; padding-top: 10px;
+  cursor: pointer;
+}
+#transferencia {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  margin: 75px 0px;
+  background: #f1f1f1;
+  font-family: 'Source Sans Pro', sans-serif; color: black; padding-left: 13px; padding-top: 10px;
+  cursor: pointer;
+}
+#transferencia:hover {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  margin: 75px 0px;
+  background: rgba(0, 0, 0, 0.1);
+  font-family: 'Source Sans Pro', sans-serif; color: black; padding-left: 13px; padding-top: 10px;
+  cursor: pointer;
+}
